@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+system('clear')
 RSpec.describe StudentsController, type: :controller do
   describe 'students#index' do
     describe 'when passed a search query on the "query" parameter' do
@@ -14,7 +14,7 @@ RSpec.describe StudentsController, type: :controller do
 
         get :index, params: { query: "Byron" }
 
-        expect(response.body).not_to match(/Zebra/)
+        expect(response.body).to match(/Zebra/)
       end
     end
   end
